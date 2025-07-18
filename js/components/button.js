@@ -8,9 +8,9 @@
     return button;
 } */
 
-
+/* ====================================================================================================================================================================
     // ButtonComponent.js
-class ButtonComponent {
+/* class ButtonComponent {
     constructor(text, onClickHandler, className = 'my-custom-button-ok') {
         this.buttonElement = document.createElement('button');
         this.buttonElement.textContent = text;
@@ -39,7 +39,7 @@ class ButtonComponent {
         this.buttonElement.disabled = false;
     }
 }
-export { ButtonComponent };
+export { ButtonComponent }; */
 
 // Como usar (em seu index.js ou script principal)
 // const button1 = new ButtonComponent('Enviar Dados', () => console.log('Dados enviados!'));
@@ -48,3 +48,6 @@ export { ButtonComponent };
 // const button2 = new ButtonComponent('Cancelar', () => console.warn('Operação cancelada!'), 'cancel-button');
 // document.getElementById('footer').appendChild(button2.getElement());
 // button2.disable();
+
+//=====================================================================================================================================================================
+

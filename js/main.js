@@ -41,17 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 console.log('Botões criados e adicionados ao DOM.'); */
 
-import { ButtonComponent } from './components/button.js';
+//===============================================================================================================================================================
+
+/* import { ButtonComponent } from './components/button.js';
 
 const button1 = new ButtonComponent('Enviar Dados', alerta);
 document.getElementById('btn1').appendChild(button1.getElement());
 
 const button2 = new ButtonComponent('Cancelar', () => console.log('Operação cancelada!'), 'my-custom-button-cancel');
  document.getElementById('btn2').appendChild(button2.getElement());
-/*  button2.disable(); */
+//button2.disable();
 
 
 function alerta() {
     alert('Dados enviados com sucesso!');
     console.log('Dados enviados com sucesso!');
-}
+} */
+
+//===================================================================================================================================================================
+
+        
