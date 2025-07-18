@@ -1,11 +1,9 @@
-function createButton(text, onclickHandler, className = 'my-custom-button') {
+export function createButton(text, onclickHandler, className = 'my-custom-button') {
     const button = document.createElement('button');
     button.textContent = text;
     button.className = className;
-    if (typeof onclickHandler !== 'function') {
-        throw new Error('onclickHandler must be a function');
+    if (onclickHandler && typeof onclickHandler === 'function') {
+        button.addEventListener('click', onclickHandler);
     }
     return button;
 }
-const _createButton = createButton;
-export { _createButton as createButton };
