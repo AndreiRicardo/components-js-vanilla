@@ -1,4 +1,4 @@
-// Importe a função createButton do seu arquivo.
+/* // Importe a função createButton do seu arquivo.
 // O caminho é relativo ao HTML, então './js/components/button.js' ou '../js/components/button.js'
 // dependendo de onde seu HTML está em relação à pasta 'js'.
 // Assumindo que seu HTML está na raiz e 'js' é uma pasta irmã:
@@ -39,4 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(anotherButton);
     }
 });
-console.log('Botões criados e adicionados ao DOM.');
+console.log('Botões criados e adicionados ao DOM.'); */
+
+import { ButtonComponent } from './components/button.js';
+
+const button1 = new ButtonComponent('Enviar Dados', alerta);
+document.getElementById('btn1').appendChild(button1.getElement());
+
+const button2 = new ButtonComponent('Cancelar', () => console.log('Operação cancelada!'), 'my-custom-button-cancel');
+ document.getElementById('btn2').appendChild(button2.getElement());
+/*  button2.disable(); */
+
+
+function alerta() {
+    alert('Dados enviados com sucesso!');
+    console.log('Dados enviados com sucesso!');
+}

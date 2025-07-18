@@ -1,6 +1,6 @@
 /* Seu style.css existente */
 
-.my-custom-button {
+.my-custom-button-ok {
     padding: 10px 20px;
     background-color: #007bff; /* Azul */
     color: white;
@@ -11,14 +11,21 @@
     transition: background-color 0.3s ease;
 }
 
-.my-custom-button:hover {
+.my-custom-button-ok:hover {
     background-color: #0056b3; /* Azul mais escuro no hover */
 }
 
-.secondary-button { /* Uma classe para um botão diferente, por exemplo */
-    background-color: #6c757d; /* Cinza */
+.my-custom-button-cancel { /* Uma classe para um botão diferente, por exemplo */
+    background-color: #cc2c2c; /* Cinza */
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.secondary-button:hover {
-    background-color: #5a6268;
+.my-custom-button-cancel:hover {
+    background-color: #771a1a;
 }
