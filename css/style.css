@@ -1,0 +1,21 @@
+
+root{
+    --button-bg: #3001ff !important;
+    --button-color: #ffffff !important;
+    --button-hover-bg: #2000b1 !important;
+}
+
+body {
+     font-family: sans-serif;
+     padding: 20px;
+ }
+
+ /* Estilos CSS personalizados para o escopo global, se necessário */
+ /* Por exemplo, se você quiser definir --button-bg globalmente */
+ 
+
+ my-button {
+     margin: 10px;
+     display: inline-block;
+     /* Para que os botões se alinhem um ao lado do outro */
+ }

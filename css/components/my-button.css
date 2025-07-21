@@ -1,9 +1,10 @@
 /* Seu style.css existente */
 
+
 .my-custom-button-ok {
     padding: 10px 20px;
-    background-color: #007bff; /* Azul */
-    color: white;
+    background-color: var(--button-bg, #3001ff);
+    color: var(--button-color, #ffffff);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -12,11 +13,12 @@
 }
 
 .my-custom-button-ok:hover {
-    background-color: #0056b3; /* Azul mais escuro no hover */
+    background-color: #771a1a;
 }
 
-.my-custom-button-cancel { /* Uma classe para um botão diferente, por exemplo */
-    background-color: #cc2c2c; /* Cinza */
+
+.my-custom-button-cancel {
+    background-color: #cc2c2c;
     padding: 10px 20px;
     color: white;
     border: none;
@@ -28,4 +30,23 @@
 
 .my-custom-button-cancel:hover {
     background-color: #771a1a;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg);
 }

@@ -43,21 +43,59 @@ console.log('Botões criados e adicionados ao DOM.'); */
 
 //===============================================================================================================================================================
 
-/* import { ButtonComponent } from './components/button.js';
+import { ButtonComponent } from './components/button.js';
+document.addEventListener('DOMContentLoaded', () => {
+    const button1 = new ButtonComponent('Enviar Dados', alerta);
+    document.getElementById('btn1').appendChild(button1.getElement());
 
-const button1 = new ButtonComponent('Enviar Dados', alerta);
-document.getElementById('btn1').appendChild(button1.getElement());
-
-const button2 = new ButtonComponent('Cancelar', () => console.log('Operação cancelada!'), 'my-custom-button-cancel');
- document.getElementById('btn2').appendChild(button2.getElement());
-//button2.disable();
+    const button2 = new ButtonComponent('Cancelar', () => console.log('Operação cancelada!'), 'my-custom-button-cancel');
+    document.getElementById('btn2').appendChild(button2.getElement());
+    //button2.disable();
 
 
-function alerta() {
-    alert('Dados enviados com sucesso!');
-    console.log('Dados enviados com sucesso!');
-} */
+    function alerta() {
+        alert('Dados enviados com sucesso!');
+        console.log('Dados enviados com sucesso!');
+    }
+});
 
 //===================================================================================================================================================================
+/* document.addEventListener('DOMContentLoaded', () => {
+           const container = document.getElementById('container-botoes');
+             const injetContext = document.getElementById('contexto');
 
-        
+           // Exemplo de criação de botão programaticamente
+           const newButton = document.createElement('my-button');
+           newButton.textContent = 'Botão Criado via JS'; // Adiciona texto via textContent
+           newButton.addEventListener('buttonClick', (event) => {
+               
+               alert('Botão criado via JS clicado!');
+           });
+           container.appendChild(newButton);
+
+           // Exemplo de manipulação de um botão existente
+           const sendButton = document.querySelector('my-button[text="Enviar Dados"]');
+           if (sendButton) {
+               sendButton.addEventListener('buttonClick', (event) => {
+                   inserirContexto();
+                   console.log('Evento do botão "Enviar Dados":', event.detail);
+                   alert('Dados estão sendo enviados!');
+               });
+
+               // Desabilitar o botão de enviar dados após 3 segundos
+               setTimeout(() => {
+                   sendButton.disable(); // Chama o método público do Web Component
+                   sendButton.setText('Enviado!'); // Altera o texto
+               }, 3000);
+           }
+          
+                     // Exemplo de como reagir ao evento de qualquer 'my-button' no documento
+           document.addEventListener('buttonClick', (event) => {
+               console.log('Um my-button foi clicado em algum lugar:', event.detail);
+               // Você pode adicionar lógica global aqui
+           });
+           function inserirContexto (){
+injetContext.innerHTML = 'Conteudo inserido';
+           }
+           
+       }); */

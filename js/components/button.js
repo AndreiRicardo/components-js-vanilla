@@ -8,9 +8,9 @@
     return button;
 } */
 
-/* ====================================================================================================================================================================
+// ====================================================================================================================================================================
     // ButtonComponent.js
-/* class ButtonComponent {
+class ButtonComponent {
     constructor(text, onClickHandler, className = 'my-custom-button-ok') {
         this.buttonElement = document.createElement('button');
         this.buttonElement.textContent = text;
@@ -39,7 +39,7 @@
         this.buttonElement.disabled = false;
     }
 }
-export { ButtonComponent }; */
+export { ButtonComponent };
 
 // Como usar (em seu index.js ou script principal)
 // const button1 = new ButtonComponent('Enviar Dados', () => console.log('Dados enviados!'));
@@ -50,4 +50,78 @@ export { ButtonComponent }; */
 // button2.disable();
 
 //=====================================================================================================================================================================
+
+/* class MyButton extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const template = document.createElement('template');
+        template.innerHTML = `
+        <style>
+        button {
+            padding: 10px 20px;
+            background-color: var(--button-bg, #007bff);
+            color: var(--button-color, #fff);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30px
+        }
+        button:hover {
+            background-color: var(--button-hover-bg, #0056b3);
+            color: var(--button-hover-color, #fff);
+        }
+        </style>
+        <button><slot></slot></button>
+        `;
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+        this.button = this.shadowRoot.querySelector('button').addEventListener('click', () => {
+            this.dispatchEvent(new CustomEvent('buttonClick', {
+                detail: this.textContent || this.getAttribute('text') || 'botâo Clicado',
+                bubbles: true,
+                composed: true
+            }));
+        });
+    }
+    static get observedAttributes() {
+        return ['text'];
+    }
+    attributeChangedCallback(name, oldValue, newValue) {
+        const button = this.shadowRoot.querySelector('button');
+        if (!button) return;
+        if (name === 'text') {
+            button.textContent = newValue;
+            while (this.shadownRoot.querySelector('slot').firstChild) {
+                this.shadowRoot.querySelector('slot').removeChild(this.shadowRoot.querySelector('slot').firstChild);
+            }
+        } else if (name === 'disabled') {
+            button.disabled = this.hasAttribute('disabled');
+        }
+    }
+
+    connectedCallback() {
+        const button = this.shadowRoot.querySelector('button');
+        if (!button) return;
+        button.textContent = this.getAttribute('text') || 'Default Button';
+        button.disabled = this.hasAttribute('disabled');
+    }
+    
+    setText(newText) {
+        this.setAttribute('text', newText);
+    }
+    disable() {
+        this.setAttribute('disabled', '');
+    }
+    enable() {
+        this.removeAttribute('disabled');
+    }
+}
+
+customElements.define('my-button', MyButton); */
 
