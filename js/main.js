@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('Botões criados e adicionados ao DOM.'); */
 
 //===============================================================================================================================================================
-
+import { dom } from './utils/dom-helpers.js'; // Importe o módulo dom
 import { ButtonComponent } from './components/button.js';
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
     const button1 = new ButtonComponent('Enviar Dados', alerta);
     document.getElementById('btn1').appendChild(button1.getElement());
 
@@ -57,7 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Dados enviados com sucesso!');
         console.log('Dados enviados com sucesso!');
     }
-});
+}); */
+const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' }, [document.createTextNode('Clique')]);
+btn.onclick = () => alert('Clicou no botão!');
+btn.onclick = () => console.log('Clicou no botão!'); // Adiciona um evento de clique ao botão
+// Neste momento, btn NÃO está no DOM ainda!
+document.body.appendChild(btn); // Agora sim, btn está no DOM.
 
 //===================================================================================================================================================================
 /* document.addEventListener('DOMContentLoaded', () => {

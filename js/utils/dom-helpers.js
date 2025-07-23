@@ -1,6 +1,7 @@
-class DOMHelpers extends HTMLElement {
+class DOMHelpers {
     constructor() {
-        super();
+       
+        console.log('DOMHelpers initialized');
     }
     qs(selector, parent = document) {
         return parent.querySelector(selector);
