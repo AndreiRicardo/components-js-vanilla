@@ -1,6 +1,6 @@
 class DOMHelpers {
     constructor() {
-       
+           
         console.log('DOMHelpers initialized');
     }
     qs(selector, parent = document) {
@@ -24,13 +24,17 @@ class DOMHelpers {
     hasClass(el, className) {
         return el ? el.classList.contains(className) : false;
     }
-    createElement(tagName, attribute = {}, children = []) {
+    createElement(tagName, attribute = {}, children = [], handler) {
         const el = document.createElement(tagName);
         for (const [key, value] of Object.entries(attribute)) {
             el.setAttribute(key, value);
         }
         for (const child of children) {
             el.appendChild(child);
+        }
+        el.addEventListener('click', handler);
+        if (handler && typeof handler === 'function') {
+            el.addEventListener('click', handler);
         }
         return el;
     }
@@ -46,7 +50,7 @@ class DOMHelpers {
             }
         }
     }
-    onEvent(el,evnetType,selector, handler){
+    onEvento(el,evnetType,selector, handler){
         if(el) {
             el.addEventListener(evnetType, (event) => {
                 if (event.target && event.target.matches(selector)) {
@@ -55,7 +59,12 @@ class DOMHelpers {
             });
         }
     }
+    adicionartextoDeContexto(texto) {
+      const el = document.createTextNode(texto);
+      return el;
+    }
 }
+
 
 const dom = new DOMHelpers();
 

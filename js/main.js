@@ -58,10 +58,9 @@ import { ButtonComponent } from './components/button.js';
         console.log('Dados enviados com sucesso!');
     }
 }); */
-const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' }, [document.createTextNode('Clique')]);
-btn.onclick = () => alert('Clicou no botão!');
-btn.onclick = () => console.log('Clicou no botão!'); // Adiciona um evento de clique ao botão
-// Neste momento, btn NÃO está no DOM ainda!
+const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' },
+    [dom.adicionartextoDeContexto('Clique')],
+    () => { alert('Clicou no botão!'); console.log('Clicou no botão!'); });
 document.body.appendChild(btn); // Agora sim, btn está no DOM.
 
 //===================================================================================================================================================================
