@@ -58,10 +58,17 @@ import { ButtonComponent } from './components/button.js';
         console.log('Dados enviados com sucesso!');
     }
 }); */
-const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' },
-    [dom.adicionartextoDeContexto('Clique')],
-    () => { alert('Clicou no botão!'); console.log('Clicou no botão!'); });
-document.body.appendChild(btn); // Agora sim, btn está no DOM.
+const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' },[dom.adicionartextoDeContexto('Clique')],() => { alert('Clicou no botão!'); console.log('Clicou no botão!'); });        
+document.body.appendChild(btn);
+
+const btn2 = document.createElement('button');
+btn2.id = 'meuBotao2';
+btn2.className = 'my-custom-button-ok';
+btn2.textContent = 'Clique Aqui';
+btn2.onclick = () => { alert('Clicou no botão 2!'); console.log('Clicou no botão 2!'); };
+btn2.addEventListener('click', () => {
+    console.log('Clicou no botão 2 denovo!')}) ;
+document.body.appendChild(btn2);// Agora sim, btn está no DOM.
 
 //===================================================================================================================================================================
 /* document.addEventListener('DOMContentLoaded', () => {
