@@ -43,7 +43,7 @@ console.log('Botões criados e adicionados ao DOM.'); */
 
 //===============================================================================================================================================================
 import { dom } from './utils/dom-helpers.js'; // Importe o módulo dom
-import { ButtonComponent } from './components/button.js';
+// import { ButtonComponent } from './components/button.js';
 /* document.addEventListener('DOMContentLoaded', () => {
     const button1 = new ButtonComponent('Enviar Dados', alerta);
     document.getElementById('btn1').appendChild(button1.getElement());
