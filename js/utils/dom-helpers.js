@@ -72,6 +72,7 @@ class DOMHelpers {
     createTextNode(text) {
         return document.createTextNode(text);
     }
+
 }
 
 const dom = new DOMHelpers();

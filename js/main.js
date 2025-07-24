@@ -65,13 +65,15 @@ document.body.appendChild(btn);
 
 const btn2 = document.createElement('button');
 btn2.id = 'meuBotao2';
-btn2.className = 'my-custom-button-ok';
+btn2.className = 'my-custom-button-cancel';
 btn2.textContent = 'Clique Aqui';
-btn2.onclick = () => { alert('Clicou no botão 2!'); console.log('Clicou no botão 2!'); };
+btn2.onclick = () => { alert('Ação cancelada!'); console.log('Ação cancelada!'); };
 btn2.addEventListener('click', () => {
     console.log('Clicou no botão 2 denovo!')}) ;
 document.body.appendChild(btn2);// Agora sim, btn está no DOM.
 
+
+// eu soh queira provar um ponto onde nao compensa renomear o objeto document do DOM.
 //===================================================================================================================================================================
 /* document.addEventListener('DOMContentLoaded', () => {
            const container = document.getElementById('container-botoes');
