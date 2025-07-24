@@ -61,6 +61,8 @@ import { dom } from './utils/dom-helpers.js'; // Importe o módulo dom
 const btn = dom.createElement('button', { id: 'meuBotao', class: 'my-custom-button-ok' },[dom.adicionartextoDeContexto('Clique')],() => { alert('Clicou no botão!'); console.log('Clicou no botão!'); });        
 document.body.appendChild(btn);
 
+//diferença entre o createElement e o createButton é que o createButton já tem um texto padrão e um evento de click, enquanto o createElement é mais genérico e você pode personalizar mais.
+
 const btn2 = document.createElement('button');
 btn2.id = 'meuBotao2';
 btn2.className = 'my-custom-button-ok';
