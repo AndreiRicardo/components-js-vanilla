@@ -69,7 +69,7 @@ class DOMHelpers {
         }
     }
 
-    createTextNode(text) {
+    cTxNode(text) {
         return document.createTextNode(text);
     }
 
